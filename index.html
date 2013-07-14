@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+<head>
+    <title> Sala2 Recetario</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    
+    <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+    <meta http-equiv="cleartype" content="on">
+
+    <!-- jQuery Mobile CSS bits -->
+    <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.2.0.min.css" />
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/custom.css" /> -->
+
+    <!-- Javascript includes -->
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/mobileinit.js"></script>
+    <script src="js/ios-orientationchange-fix.js"></script>
+    <script src="js/jquery.mobile-1.2.0.min.js"></script>
+    <script src="js/jquery-ajax-jstorage-cache.js"></script>
+    <script src="js/json2.js"></script>
+    <script src="js/jstorage.js"></script>
+    <script src="js/application.js"></script>
+    <!-- Startup Images for iDevices -->
+    <script>(function(){var a;if(navigator.platform==="iPad"){a=window.orientation!==90||window.orientation===-90?"images/startup-tablet-landscape.png":"images/startup-tablet-portrait.png"}else{a=window.devicePixelRatio===2?"images/startup-retina.png":"images/startup.png"}document.write('<link rel="apple-touch-startup-image" href="'+a+'"/>')})()</script>
+    <!-- The script prevents links from opening in mobile safari. https://gist.github.com/1042026 -->
+    <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+    <script type="text/javascript">
+        Sala2.init();
+    </script>
+</head> 
+<body>
+    <div id="fb-root"></div>
+    <div id="splash" data-role="page" style="background: #d7d7d7 
+        url('images/final_panecillos.jpg'); background-size: 98% auto; background-repeat:no-repeat; background-position:center center;">
+        <div id="wrapper">
+            <h1>Sala2 Recetario</h1>
+            <p>Tus recetas de cocina!</p>
+        </div>
+    </div>
+
+    <div id="categoryListPage" data-role="page" >
+        <div data-role="header" data-position="fixed">
+            <h1>Categoras</h1>
+        </div>
+        <div data-role="content">   
+            <ul data-role="listview" id ="categoryList">
+                <li>
+                    <a data-param="carnes" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/carnes.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Carnes</h3>
+                        <p class="ui-li-desc">Recetas con base de carne</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Cocina en miniatura" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/pintxo.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Cocina en minuatura</h3>
+                        <p class="ui-li-desc">Pintxos pues!</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Comidas del mundo" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/comida_del_mundo.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Comidas del mundo</h3>
+                        <p class="ui-li-desc">De aquí y de allí</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-param="ensalada" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/ensaladas.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Ensaladas</h3>
+                        <p class="ui-li-desc">Sano, sano</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Entre pan y pan" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/pan.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Entre pan y pan</h3>
+                        <p class="ui-li-desc">...bocadillos</p>                        
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Galletas" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/galletas.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Galletas</h3>
+                        <p class="ui-li-desc">ñam, ñam</p>                        
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Las recetas de la abuela" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/recetas_abuela.jpg"  class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Las recetas de la abuela</h3>
+                        <p class="ui-li-desc">De hoy y de siempre</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Panaderia Sala2" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/panaderia.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Panadería Sala2</h3>
+                        <p class="ui-li-desc">Pan con pan</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Pescados" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/pescados.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Pescados</h3>
+                        <p class="ui-li-desc">Del mar a tu mesa</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Postres" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/postres.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Postres</h3>
+                        <p class="ui-li-desc">De la mesa al michelín</p>
+                    </a>
+                </li>
+                <li>
+                    <a data-param="Setas" href="#recipeListPage" class="ui-link-inherit">
+                        <img src="./images/setas.jpg" class="ui-li-thumb"/>
+                        <h3 class="ui-li-heading">Setas</h3>
+                        <p class="ui-li-desc">Del monte a tu mesa</p>
+                    </a>
+                </li>
+            </ul>
+        </div>  
+        <div data-role="footer" data-position="fixed" >     
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#" data-icon="home">
+                        <span class="ui-btn-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#favoriteListPage" data-icon="star">
+                        <span class="ui-btn-text">Favoritos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#alphabeticalListPage" data-icon="grid">
+                        <span class="ui-btn-text">Listado</span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+    </div>
+
+    <div id="recipeListPage" data-role="page">
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" data-theme="d">Volver</a>
+            <h1 id="categoryName"></h1>
+        </div>
+        <div data-role="content">
+             <ul id="recipeList" data-role="listview" data-filter="true" data-filter-placeholder="Busca tus recetas..."></ul>
+        </div> 
+        <div data-role="footer" data-position="fixed" >     
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#categoryListPage" data-icon="home">
+                        <span class="ui-btn-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#favoriteListPage" data-icon="star">
+                        <span class="ui-btn-text">Favoritos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#alphabeticalListPage" data-icon="grid">
+                        <span class="ui-btn-text">Listado</span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer --> 
+    </div>
+
+    <div id="detailsPage" data-role="page" >
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" data-theme="d">Volver</a>
+            <h1 id="recipeTitle"></h1>
+        </div>
+        <div data-role="content"> 
+            <div class="fb-like" data-href="https://www.facebook.com/RecetarioSala2" data-send="false" data-width="450" data-show-faces="false">
+            </div>
+            <div id="recipeDetail">
+                <div data-role="content">
+                    <div data-role="popup" id="popup" data-theme="a" >
+                        <div data-role="content" data-theme="d">
+                            <h3>¿Quieres añadir la receta a tus favoritos?</h3>
+                            <p>Podrás consultarlas más tarde.</p>
+                            <a href="#" data-icon="back" data-role="button" data-inline="true" data-rel="back">Ahora no</a>
+                            <a href="#" id="saveFav" data-icon="star" data-role="button" data-inline="true" data-theme="b">Sí, gracias</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" >     
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#categoryListPage" data-icon="home">
+                        <span class="ui-btn-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#popup" data-rel="popup" data-position-to="window" data-icon="star">
+                          <span class="ui-btn-text">Favoritos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#alphabeticalListPage" data-icon="grid">
+                        <span class="ui-btn-text">Listado</span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+    </div>
+
+    <div id="favoriteListPage" data-role="page">
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" data-theme="d">Volver</a>
+            <h1>Tus Favoritos</h1>
+        </div>
+        <div data-role="content">
+            <ul id="favoriteList" data-role="listview" data-filter="true" data-filter-placeholder="Busca en tus favoritos..."></ul>
+        </div>
+        <div data-role="footer" data-position="fixed" >     
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#categoryListPage" data-icon="home">
+                        <span class="ui-btn-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#favoriteListPage" data-icon="star">
+                        <span class="ui-btn-text">Favoritos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#alphabeticalListPage" data-icon="grid">
+                        <span class="ui-btn-text">Listado</span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer -->
+    </div>
+
+    <div id="alphabeticalListPage" data-role="page">
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" data-theme="d">Volver</a>
+            <h1>Listado Recetas</h1>
+        </div>
+        <div data-role="content">
+             <ul id="alphabeticalList" data-role="listview" data-filter="true"  data-autodividers="true" data-filter-placeholder="Busca tus recetas...">
+             </ul>
+        </div> 
+        <div data-role="footer" data-position="fixed" >     
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#categoryListPage" data-icon="home">
+                        <span class="ui-btn-text">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#favoriteListPage" data-icon="star">
+                        <span class="ui-btn-text">Favoritos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#alphabeticalListPage" data-icon="grid">
+                        <span class="ui-btn-text">Listado</span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /footer --> 
+    </div>
+
+</body>
+</html>
