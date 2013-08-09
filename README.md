@@ -1,7 +1,7 @@
 sala2recetario
 ==============
 
-Wordpress mobile App using Lungo Framework
+Wordpress mobile App using JQuery Mobile Framework
 
 Author
 ------
